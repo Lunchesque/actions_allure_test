@@ -41,7 +41,7 @@ jobs:
       run: | 
         pytest -vss --alluredir=report src/test_all.py
     - name: Test marketplace action
-      uses: Lunchesque/actions_allure_test@master
+      uses: Lunchesque/actions_allure_test@main
       if: always()
       id: allure-report
       with:
