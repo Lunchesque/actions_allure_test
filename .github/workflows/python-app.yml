@@ -31,7 +31,14 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install pipenv
-        pipenv install --system --deploy    
+        pipenv install --system --deploy
+    - name: Get Allure history
+      uses: actions/checkout@v2
+      if: always()
+      continue-on-error: true
+      with:
+        ref: gh-pages
+        path: gh-pages 
     - name: Run pytest
       run: | 
         pytest -vss --alluredir=report src/test_all.py
