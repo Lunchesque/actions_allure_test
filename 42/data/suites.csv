@@ -1,3 +1,3 @@
 "Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Wed Aug 02 13:43:38 GMT 2023","Wed Aug 02 13:43:38 GMT 2023","151","","pytest","","src.tests.test_all.TestOne","","test_one",""
-"passed","Wed Aug 02 13:43:38 GMT 2023","Wed Aug 02 13:43:38 GMT 2023","140","","pytest","","src.tests.test_all.TestOne","","test_two",""
+"passed","Wed Aug 02 13:48:49 GMT 2023","Wed Aug 02 13:48:49 GMT 2023","167","","pytest","","src.tests.test_all.TestOne","","test_one",""
+"passed","Wed Aug 02 13:48:49 GMT 2023","Wed Aug 02 13:48:49 GMT 2023","148","","pytest","","src.tests.test_all.TestOne","","test_two",""
