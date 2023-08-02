@@ -10,10 +10,8 @@ permissions:
   contents: read
 
 jobs:
-  test:
-
+  allure:
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v3
     - name: Set up Python 3.10
@@ -43,7 +41,7 @@ jobs:
       run: | 
         pytest -vss --alluredir=report src/test_all.py
     - name: Test marketplace action
-      uses: simple-elf/allure-report-action@master
+      uses: Lunchesque/allure-report-action@master
       if: always()
       id: allure-report
       with:
