@@ -38,4 +38,4 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest
       run: |
-        pytest -vss --alluredir=report src/test_all.py
+        pytest -vss --alluredir=allure_results src/test_all.py
