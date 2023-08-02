@@ -44,7 +44,8 @@ jobs:
           mkdir -p ${{ vars.ALLURE_RESULTS_PATH }}
       - name: Run tests with pytest # Step to run tests using pytest
         run: |
-          pytest -vvs --color=yes --alluredir=../${{ vars.ALLURE_RESULTS_PATH }} src/tests/
+          ls;
+          pytest -vvs --color=yes --alluredir=../${{ vars.ALLURE_RESULTS_PATH }} src/tests/test_all.py
       
       - name: Get Allure history # Step to retrieve Allure history
         uses: actions/checkout@v3
