@@ -1,11 +1,22 @@
 import pytest
 import requests
+import allure
+import logging
 
 
+@allure.severity(allure.severity_level.CRITICAL)
 class TestOne:
 
+    logger = logging.getLogger()
+
+    @pytest.mark.smoke
     def test_one(self):
         resp = requests.get(url="https://www.python.org/")
-        print(resp.status_code)
+        self.logger.debug(f"Get status code is {resp.status_code}")
         assert resp.status_code == 200
-        assert True
+
+    @pytest.mark.smoke
+    def test_two(self):
+        resp = requests.get(url="https://www.python.org/")
+        self.logger.debug(f"Get status code is {resp.status_code}")
+        assert resp.status_code == 200
