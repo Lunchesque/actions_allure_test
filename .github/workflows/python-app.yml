@@ -44,7 +44,7 @@ jobs:
           mkdir -p ${{ vars.ALLURE_RESULTS_PATH }}
       - name: Run tests with pytest # Step to run tests using pytest
         run: |
-          ls:
+          ls;
           pytest --color=yes --alluredir=../${{ vars.ALLURE_RESULTS_PATH }} -m smoke --junitxml=allure_results/report_smoke.xml
       
       - name: Get Allure history # Step to retrieve Allure history
