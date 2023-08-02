@@ -44,7 +44,7 @@ jobs:
           mkdir -p ${{ vars.ALLURE_RESULTS_PATH }}
       - name: Run tests with pytest # Step to run tests using pytest
         run: |
-          pytest -vvs --color=yes --alluredir=../${{ vars.ALLURE_RESULTS_PATH }}
+          pytest -vvs --color=yes --alluredir=../${{ vars.ALLURE_RESULTS_PATH }} src/tests/test_all.py
       
       - name: Get Allure history # Step to retrieve Allure history
         uses: actions/checkout@v3
@@ -55,7 +55,7 @@ jobs:
           path: gh-pages # Set the destination path for Allure history
       
       - name: Allure report action # Step to generate Allure report
-        uses: Lunchesque/actions_allure_test@main
+        uses: simple-elf/allure-report-action@master
         if: always()
         with:
           allure_results: ${{ vars.ALLURE_RESULTS_PATH }} # Specify the directory containing Allure results
