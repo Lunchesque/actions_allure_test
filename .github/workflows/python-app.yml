@@ -39,3 +39,4 @@ jobs:
     - name: Test with pytest
       run: |
         pytest -vss --alluredir=allure_results src/test_all.py
+        ls allure_results
