@@ -55,7 +55,7 @@ jobs:
           path: gh-pages # Set the destination path for Allure history
       
       - name: Allure report action # Step to generate Allure report
-        uses: simple-elf/allure-report-action@master
+        uses: Lunchesque/actions_allure_test@main
         if: always()
         with:
           allure_results: ${{ vars.ALLURE_RESULTS_PATH }} # Specify the directory containing Allure results
@@ -64,7 +64,7 @@ jobs:
       
       - name: Deploy Allure report to GitHub Pages # Step to deploy Allure report to GitHub Pages
         if: always()
-        uses: peaceiris/actions-gh-pages@v3
+        uses: Lunchesque/gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }} # Provide the GitHub token for authentication
           publish_branch: gh-pages # Specify the branch to publish the report to
