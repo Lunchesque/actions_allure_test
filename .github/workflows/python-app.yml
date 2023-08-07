@@ -45,16 +45,20 @@ jobs:
       - name: Run tests with pytest # Step to run tests using pytest
         run: |
           ls;
-          pytest --color=yes --alluredir=../${{ vars.ALLURE_RESULTS_PATH }} -m smoke --junitxml=allure_results/report_smoke.xml;
+          pytest --color=yes --alluredir=../${{ vars.ALLURE_RESULTS_PATH }} -m smoke --junitxml=allure_results/report_smoke.xml
+        
+      - name: TestRail CLI upload results
+        if: always()
+        run: |
           trcli -y \
-            -h https://lunchesque.testrail.io/ \
-            --project "test_prj" \
-            -u lunchesque1993@gmail.com \
-            -p Lunchesque.2023 \
-            parse_junit \
-            --title "Automated Tests from GitHub workflow" \
-            --run-description ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }} \
-            -f "report_smoke.xml"
+          -h https://lunchesque.testrail.io/ \
+          --project "test_prj" \
+          -u lunchesque1993@gmail.com \
+          -p Lunchesque.2023 \
+          parse_junit \
+          --title "Automated Tests from GitHub workflow" \
+          --run-description ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }} \
+          -f "report_smoke.xml"
       
       - name: Get Allure history # Step to retrieve Allure history
         uses: actions/checkout@v3
