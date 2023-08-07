@@ -51,10 +51,10 @@ jobs:
         if: always()
         run: |
           trcli -y \
-          -h https://lunchesque.testrail.io/ \
+          -h "https://lunchesque.testrail.io/" \
           --project "test_prj" \
-          -u lunchesque1993@gmail.com \
-          -p Lunchesque.2023 \
+          -u "lunchesque1993@gmail.com" \
+          -p "Lunchesque.2023" \
           parse_junit \
           --title "Automated Tests from GitHub workflow" \
           --run-description ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }} \
