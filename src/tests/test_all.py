@@ -11,9 +11,10 @@ class TestOne:
 
     @pytest.mark.smoke
     def test_one(self):
-        resp = requests.get(url="https://www.python.org/")
-        self.logger.debug(f"Get status code is {resp.status_code}")
-        assert resp.status_code == 200
+        with allure.step("Get python url"):
+            resp = requests.get(url="https://www.python.org/")
+            self.logger.debug(f"Get status code is {resp.status_code}")
+            assert resp.status_code == 201
 
     @pytest.mark.smoke
     def test_two(self):
