@@ -14,7 +14,7 @@ class TestOne:
         with allure.step("Get python url"):
             resp = requests.get(url="https://www.python.org/")
             self.logger.debug(f"Get status code is {resp.status_code}")
-            assert resp.status_code == 201
+            assert resp.status_code == 200
 
     @pytest.mark.smoke
     def test_two(self):
