@@ -45,7 +45,7 @@ jobs:
       - name: Run tests with pytest # Step to run tests using pytest
         run: |
           ls;
-          pytest --color=yes --alluredir=../${{ vars.ALLURE_RESULTS_PATH }} -m smoke --junitxml=allure_results/report_smoke.xml
+          pytest --color=yes --alluredir=../${{ vars.ALLURE_RESULTS_PATH }} -m smoke --junitxml=allure_results/report_smoke.xml;
           trcli -y \
             -h https://lunchesque.testrail.io/ \
             --project "test_prj" \
