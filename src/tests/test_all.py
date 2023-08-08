@@ -16,7 +16,6 @@ class TestOne:
             self.logger.debug(f"Get status code is {resp.status_code}")
             assert resp.status_code == 201
             
-
     @pytest.mark.smoke
     def test_two(self):
         resp = requests.get(url="https://www.python.org/")
