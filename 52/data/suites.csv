@@ -1,3 +1,0 @@
-"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Mon Aug 07 09:20:59 GMT 2023","Mon Aug 07 09:20:59 GMT 2023","134","","pytest","","src.tests.test_all.TestOne","","test_two",""
-"failed","Mon Aug 07 09:20:59 GMT 2023","Mon Aug 07 09:20:59 GMT 2023","158","","pytest","","src.tests.test_all.TestOne","","test_one",""
